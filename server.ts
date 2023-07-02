@@ -12,14 +12,13 @@ const corsOptions = {
 app.use(cors(corsOptions))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
-app.use('/post', postRouter)
+app.use('/posts', postRouter)
 
-app.get('/', (req: any, res: any) => {
+app.get('/', (req: any, res: any): void => {
     res.json('Welcome')
 });
 
-
 const PORT = process.env.PORT || 8080
-app.listen(PORT, () => {
+app.listen(PORT, (): void => {
     console.log(`Server is running on port ${PORT}`)
 })
